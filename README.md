@@ -93,7 +93,11 @@ a) Utiliser la fonction de déauthentification de la suite aircrack, capturer le
 
 __Question__ : quel code est utilisé par aircrack pour déauthentifier un client 802.11. Quelle est son interpretation ?
 
+Nous avons pu voir que airecrack utilisait le code 7 pour déauthentifier les clients; /!\ insérer capture
+
 __Question__ : A l'aide d'un filtre d'affichage, essayer de trouver d'autres trames de déauthentification dans votre capture. Avez-vous en trouvé d'autres ? Si oui, quel code contient-elle et quelle est son interpretation ?
+
+Oui, nous avons vu d'autres trames de déauthentification;
 
 b) Développer un script en Python/Scapy capable de générer et envoyer des trames de déauthentification. Le script donne le choix entre des Reason codes différents (liste ci-après) et doit pouvoir déduire si le message doit être envoyé à la STA ou à l'AP :
 * 1 - Unspecified
@@ -103,9 +107,19 @@ b) Développer un script en Python/Scapy capable de générer et envoyer des tra
 
 __Question__ : quels codes/raisons justifient l'envoie de la trame à la STA cible et pourquoi ?
 
+Les codes 1, 4, 5 sont utilisés pour l'envoi de trames vers les STA cibles.
+1 Parce que la raison n'est pas spécifiée et peut se retrouver dans n'importe quel cas.
+4 Parce que l'AP détecte l'inactivité de la station cliente et le déconnecte pour libérer de l'espace.
+5 Parce que l'AP est surchargé, il va donc déconnecter les STA qui se sont authentifiée en dernier.
+
 __Question__ : quels codes/raisons justifient l'envoie de la trame à l'AP et pourquoi ?
+Les codes 1 et 8 sont utilisés pour l'envoi de trames vers les AP cibles.
+1 Pour les mêmes raison que précédemment
+8 Parce que c'est la STA qui dit à l'AP qu'il quitte ce réseau.
 
 __Question__ : Comment essayer de déauthentifier toutes les STA ?
+
+En envoyant un broadcast, la valeur de la STA pour broadcast est ff:ff:ff:ff:ff:ff
 
 __Question__ : Quelle est la différence entre le code 3 et le code 8 de la liste ?
 
