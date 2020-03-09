@@ -107,6 +107,10 @@ b) Développer un script en Python/Scapy capable de générer et envoyer des tra
 * 5 - Disassociated because AP is unable to handle all currently associated stations
 * 8 - Deauthenticated because sending STA is leaving BSS
 
+__Utilisation du script__
+
+Avant de lancer le script de deauthentification *deauth.py* (sans arguments), il faut modifier le nom de l'interface *iface* utilisé ainsi que les variables *sta_mac* et *ap_mac* qui sont les adresses MAC de la station et de l'AP qu'on veut attaquer. Nous avons trouvé plus pratique de mettre ces variables à modifier dans le script plutôt qu'en argument en le lançant.
+
 __Question__ : quels codes/raisons justifient l'envoie de la trame à la STA cible et pourquoi ?
 
 Les codes 1, 4, 5 sont utilisés pour l'envoi de trames vers les STA cibles.
