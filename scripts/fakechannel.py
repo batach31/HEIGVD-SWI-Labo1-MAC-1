@@ -54,10 +54,11 @@ target = pkt_list[input_id]
 # the beacon will be 6 channels appart from the original one
 chan = target[Dot11Beacon].network_stats().get("channel") + 6 % 14
 
-# we strip the beacon from the end of the original packet to look like a beacon on the new channel
-beacon = target/target.getlayer(6)/Dot11Elt(ID="DSset", info=chr(chan))
+# we put the beacon packet on the new channel
+beacon = target/Dot11Elt(ID="DSset", info=chr(chan))
 
 # switching channel on the interface
 print "New channel is %d" %(chan)
 print "Press CTRL+C to stop sending beacons: "
 sendp(beacon, iface=interface, inter=0.1, loop=1)
+print "Exiting..."
