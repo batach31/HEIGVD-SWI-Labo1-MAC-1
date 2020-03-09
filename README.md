@@ -144,6 +144,15 @@ __Question__ : Expliquer l'effet de cette attaque sur la cible
 
 C'est une attaque par "spoofing" où on se fait passer pour un AP existant en l'imitant depuis un autre channel. Les victimes pensent qu'il s'agit d'un AP légitime et se connectent deçu, ce qui nous permet d'écouter leurs communications et/ou voler leurs informations.
 
+Exemple d'utilisation:
+D'abord démarrer le réseau wlan0 avec aircrack: ```sudo airmon-ng start wlan0```\
+Puis lancer le script fakechannel.py\
+![ssidflood random](images/fake_chanel_step_a.JPG)
+On nous demandera alors quel réseau on veut attaquer suivant les id des paquets obtenus
+![ssidflood random](images/fake_chanel_step_b.JPG)
+Ici on voit que le script envoie des trames se définissant comme l'AP que l'on souhaite mimer sur un channel se trouvant à une distance de 6.
+
+
 ### 3. SSID flood attack
 
 Développer un script en Python/Scapy capable d'inonder la salle avec des SSID dont le nom correspond à une liste contenue dans un fichier text fournit par un utilisateur. Si l'utilisateur ne possède pas une liste, il peut spécifier le nombre d'AP à générer. Dans ce cas, les SSID seront générés de manière aléatoire.
