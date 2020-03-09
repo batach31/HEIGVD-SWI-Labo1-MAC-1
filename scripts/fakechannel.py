@@ -11,19 +11,23 @@
 from scapy.all import *
 import os
 
-pkt_list = []
-invalid = True
-counter = -1
-input_id = -1
-chan = 0
-interface = "wlan0mon"
+pkt_list = [] # The list of packet we sniff
+invalid = True # boolean for user input
+counter = -1 # counter to display the packets
+input_id = -1 # the id of the packet we want to attack
+chan = 0 # the channel of the packet
+interface = "wlan0mon" # the interface we're on
 
+# Simple packet handler used in the sniff method; we have a list of packets, each time there is one we didn't sniff, we put it in the list
+# found here: https://gist.github.com/securitytube/5291959
 def PacketHandler(pkt) :
 	global counter
 	global channel
 	if pkt.haslayer(Dot11) :
+        # we check if it's a beacon managing an association request
 		if pkt.type == 0 and pkt.subtype == 8 :
 			if pkt not in pkt_list :
+                # we push the packet in the list
 				pkt_list.append(pkt)
 				counter += 1
 				chan = pkt[Dot11Beacon].network_stats().get("channel")
@@ -39,6 +43,7 @@ while invalid:
 	# user input
 	input_id = raw_input("Network id: ")
 
+    # checking the user input
 	if not input_id.isdigit():
 		continue
 
