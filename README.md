@@ -93,11 +93,13 @@ a) Utiliser la fonction de déauthentification de la suite aircrack, capturer le
 
 __Question__ : quel code est utilisé par aircrack pour déauthentifier un client 802.11. Quelle est son interpretation ?
 
-Nous avons pu voir que airecrack utilisait le code 7 pour déauthentifier les clients; /!\ insérer capture
+Nous avons pu voir que airecrack utilisait le code 7 pour déauthentifier les clients.
+![Code de désauthentification](images/aircrack_deauth_code.jpg)
 
 __Question__ : A l'aide d'un filtre d'affichage, essayer de trouver d'autres trames de déauthentification dans votre capture. Avez-vous en trouvé d'autres ? Si oui, quel code contient-elle et quelle est son interpretation ?
 
-Oui, nous avons vu d'autres trames de déauthentification;
+Oui, nous avons vu d'autres trames de déauthentification, ces dernières utilisaient toutes le code 7 pour désauthentifier leurs clients.
+![Trames de désauthentification](images/aircrack_multiple_deauth.jpg)
 
 b) Développer un script en Python/Scapy capable de générer et envoyer des trames de déauthentification. Le script donne le choix entre des Reason codes différents (liste ci-après) et doit pouvoir déduire si le message doit être envoyé à la STA ou à l'AP :
 * 1 - Unspecified
