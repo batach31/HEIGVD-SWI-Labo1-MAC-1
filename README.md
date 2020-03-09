@@ -113,6 +113,7 @@ Les codes 1, 4, 5 sont utilisés pour l'envoi de trames vers les STA cibles.
 5 Parce que l'AP est surchargé, il va donc déconnecter les STA qui se sont authentifiée en dernier.
 
 __Question__ : quels codes/raisons justifient l'envoie de la trame à l'AP et pourquoi ?
+
 Les codes 1 et 8 sont utilisés pour l'envoi de trames vers les AP cibles.
 1 Pour les mêmes raison que précédemment
 8 Parce que c'est la STA qui dit à l'AP qu'il quitte ce réseau.
@@ -123,7 +124,11 @@ En envoyant un broadcast, la valeur de la STA pour broadcast est ff:ff:ff:ff:ff:
 
 __Question__ : Quelle est la différence entre le code 3 et le code 8 de la liste ?
 
+Le code 3 est une deauthentication alors que le code 8 est une deassociation. Une deassociation peut se faire pour passer d'un AP à l'autre sans être deauthentifié, donc en restant connecté au même service. Alors qu'une deauthentication retire l'acces au service. (Il faut être authentifié avant de pouvoir s'associer à un AP).
+
 __Question__ : Expliquer l'effet de cette attaque sur la cible
+
+Les cibles de l'attaque se font déconnectées de leur AP. Si on émet les messages de deauth en continu, les cibles n'arrivent plus à se connecter.
 
 ### 2. Fake channel evil tween attack
 a)	Développer un script en Python/Scapy avec les fonctionnalités suivantes :
@@ -135,6 +140,7 @@ a)	Développer un script en Python/Scapy avec les fonctionnalités suivantes :
 
 __Question__ : Expliquer l'effet de cette attaque sur la cible
 
+C'est une attaque par "spoofing" où on se fait passer pour un AP existant en l'imitant depuis un autre channel. Les victimes pensent qu'il s'agit d'un AP légitime et se connectent deçu, ce qui nous permet d'écouter leurs communications et/ou voler leurs informations.
 
 ### 3. SSID flood attack
 
