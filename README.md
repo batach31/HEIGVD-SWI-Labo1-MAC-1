@@ -109,7 +109,10 @@ b) Développer un script en Python/Scapy capable de générer et envoyer des tra
 
 __Utilisation du script__
 
-Avant de lancer le script de deauthentification *deauth.py* (sans arguments), il faut modifier le nom de l'interface *iface* utilisé ainsi que les variables *sta_mac* et *ap_mac* qui sont les adresses MAC de la station et de l'AP qu'on veut attaquer. Nous avons trouvé plus pratique de mettre ces variables à modifier dans le script plutôt qu'en argument en le lançant.
+Avant de lancer le script de deauthentification *deauth.py* (sans arguments), il faut modifier le nom de l'interface *iface* utilisé ainsi que les variables *sta_mac* et *ap_mac* qui sont les adresses MAC de la station et de l'AP qu'on veut attaquer. Nous avons trouvé plus pratique de mettre ces variables à modifier dans le script plutôt qu'en argument en le lançant.\
+Exemple d'utilisation:\
+Le script va demander quelle raison utiliser pour la désauthentification. Suivant la réponse, le script enverra les trames de désauthentification à la STA cible ou à l'AP cible.\
+![Deauthentication script](images/deauth_script.JPG)\
 
 __Question__ : quels codes/raisons justifient l'envoie de la trame à la STA cible et pourquoi ?
 
