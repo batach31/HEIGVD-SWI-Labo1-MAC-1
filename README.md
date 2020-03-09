@@ -146,6 +146,16 @@ C'est une attaque par "spoofing" où on se fait passer pour un AP existant en l'
 
 Développer un script en Python/Scapy capable d'inonder la salle avec des SSID dont le nom correspond à une liste contenue dans un fichier text fournit par un utilisateur. Si l'utilisateur ne possède pas une liste, il peut spécifier le nombre d'AP à générer. Dans ce cas, les SSID seront générés de manière aléatoire.
 
+Exemple d'utilisation avec 2 ssid randoms:
+![ssidflood random](images/ssidflood_random.png)
+
+![ssidflood random networks](images/ssidflood_random_networks.jpg)
+
+Exemple d'utilisation avec un fichier text de ssids:
+![ssidflood file](images/ssidflood_file.png)
+
+![ssidflood file networks](images/ssidflood_file_networks.jpg)
+
 ## Livrables
 
 Un fork du repo original . Puis, un Pull Request contenant :
