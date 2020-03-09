@@ -147,9 +147,9 @@ C'est une attaque par "spoofing" où on se fait passer pour un AP existant en l'
 Exemple d'utilisation:
 D'abord démarrer le réseau wlan0 avec aircrack: ```sudo airmon-ng start wlan0```\
 Puis lancer le script fakechannel.py\
-![ssidflood random](images/fake_chanel_step_a.JPG)
+![Fake Channel first step](images/fake_chanel_step_a.JPG)
 On nous demandera alors quel réseau on veut attaquer suivant les id des paquets obtenus
-![ssidflood random](images/fake_chanel_step_b.JPG)
+![Fake Channel second step](images/fake_chanel_step_b.JPG)
 Ici on voit que le script envoie des trames se définissant comme l'AP que l'on souhaite mimer sur un channel se trouvant à une distance de 6.
 
 
